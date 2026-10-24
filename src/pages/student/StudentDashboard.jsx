@@ -181,7 +181,7 @@ export default function StudentDashboard() {
         </div>
       )}
 
-      {enrollments.length === 0 ? (
+      {enrollments?.length === 0 ? (
         <div className="card bg-base-200">
           <div className="card-body text-center py-12">
             <h2 className="card-title justify-center">
@@ -197,7 +197,7 @@ export default function StudentDashboard() {
         </div>
       ) : (
         <div className="space-y-4">
-          {enrollments.map((enrollment) => {
+          {enrollments?.map((enrollment) => {
             const courseId = enrollment.course?._id;
             const isExpanded = expandedCourse === courseId;
             const stats = courseStats[courseId];
